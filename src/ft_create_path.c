@@ -15,6 +15,7 @@ t_path		*ft_visit_rooms(t_path *visit, int start, int end, t_keys *keys, t_links
 		i = 0;
 		while (i < keys->rooms)
 		{
+
 			if (links->links[start][i] == 1 && !ft_dup(path->path, i, keys->rooms))
 			{
 				visit->visits[++j] = i;
@@ -41,10 +42,16 @@ t_path		*ft_create_path(t_rooms *rooms, t_links *links, t_keys *keys, t_path  *v
 	int	start;
 	int	end;
 	t_visit *path;
+	int	i = 0;
 
 	path = NULL;
 	start = ft_is_link(keys->start, rooms);
 	end = ft_is_link(keys->end, rooms);
+	if (start > end){
+		i = end;
+		end = start;
+		start =i;
+	}
 	visit = ft_start_path(visit, keys, start); 
 	path = ft_rec_visit(path, keys, start);
 	visit = ft_visit_rooms(visit, start, end, keys, links, path);

@@ -59,13 +59,15 @@ t_rooms    *ft_create_rooms(t_keys *keys, t_rooms *rooms)
 		ft_putendl(line);
 		free(line);
 		free(temp);
+		temp = NULL;
 	}
 	if (ft_strlen(line) == 0)
 	{
-		ft_putstr("ERROR\n");
+		ft_putstr("EOR\n");
 		exit(0);
 	}
-	free(line);
-	free(temp);
+	// free(line);
+	// free(temp);
+
 	return (rooms);
 }
