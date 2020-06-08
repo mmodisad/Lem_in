@@ -1,6 +1,6 @@
 LEM_IN = lem_in
 LIB_PATH = ./libft/
-FLAGS = -Wall -Werror -Wextra
+##FLAGS = -Wall -Werror -Wextra
 
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
